@@ -1,0 +1,42 @@
+[
+  {
+    "avatar": "https://example.com/avatars/admin.png",
+    "name": "Admin",
+    "lastname": "User",
+    "user": "admin",
+    "password": "adminpassword",
+    "rol": "admin"
+  },
+  {
+    "avatar": "https://example.com/avatars/user1.png",
+    "name": "John",
+    "lastname": "Doe",
+    "user": "user1",
+    "password": "user1password",
+    "rol": "user"
+  },
+  {
+    "avatar": "https://example.com/avatars/user2.png",
+    "name": "Jane",
+    "lastname": "Doe",
+    "user": "user2",
+    "password": "user2password",
+    "rol": "user"
+  },
+  {
+    "avatar": "https://example.com/avatars/user3.png",
+    "name": "Alice",
+    "lastname": "Smith",
+    "user": "user3",
+    "password": "user3password",
+    "rol": "user"
+  },
+  {
+    "avatar": "https://example.com/avatars/guest.png",
+    "name": "Guest",
+    "lastname": "User",
+    "user": "guest",
+    "password": "guestpassword",
+    "rol": "guest"
+  }
+]

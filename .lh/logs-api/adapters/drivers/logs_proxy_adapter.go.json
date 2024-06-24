@@ -1,0 +1,30 @@
+{
+    "sourceFile": "logs-api/adapters/drivers/logs_proxy_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719196802564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719202033817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+package drivers\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"logs-api/ports/drivens\"\r\n+    \"logs-api/models\"\r\n+)\r\n+\r\n+type LogsProxyAdapter struct {\r\n+    drivenAdapter drivens.LogsDrivenPort\r\n+}\r\n+\r\n+func NewLogsProxyAdapter(drivenAdapter drivens.LogsDrivenPort) *LogsProxyAdapter {\r\n+    return &LogsProxyAdapter{\r\n+        drivenAdapter: drivenAdapter,\r\n+    }\r\n+}\r\n+\r\n+func (lpa *LogsProxyAdapter) SaveLog(ctx context.Context, log models.ErrorLog) error {\r\n+    return lpa.drivenAdapter.SaveErrorLog(ctx, log)\r\n+}\r\n"
+                },
+                {
+                    "date": 1719202046076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +0,0 @@\n-package drivers\r\n-\r\n-import (\r\n-    \"context\"\r\n-    \"logs-api/ports/drivens\"\r\n-    \"logs-api/models\"\r\n-)\r\n-\r\n-type LogsProxyAdapter struct {\r\n-    drivenAdapter drivens.LogsDrivenPort\r\n-}\r\n-\r\n-func NewLogsProxyAdapter(drivenAdapter drivens.LogsDrivenPort) *LogsProxyAdapter {\r\n-    return &LogsProxyAdapter{\r\n-        drivenAdapter: drivenAdapter,\r\n-    }\r\n-}\r\n-\r\n-func (lpa *LogsProxyAdapter) SaveLog(ctx context.Context, log models.ErrorLog) error {\r\n-    return lpa.drivenAdapter.SaveErrorLog(ctx, log)\r\n-}\r\n-\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719207285969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package drivers\r\n \r\n import (\r\n     \"context\"\r\n+    \"logs-api/models\"\r\n     \"logs-api/ports/drivens\"\r\n-    \"logs-api/models\"\r\n )\r\n \r\n type LogsProxyAdapter struct {\r\n     drivenAdapter drivens.LogsDrivenPort\r\n@@ -18,4 +18,20 @@\n \r\n func (lpa *LogsProxyAdapter) SaveLog(ctx context.Context, log models.ErrorLog) error {\r\n     return lpa.drivenAdapter.SaveErrorLog(ctx, log)\r\n }\r\n+\r\n+func (lpa *LogsProxyAdapter) ListLogs(ctx context.Context) ([]string, error) {\r\n+    return lpa.drivenAdapter.ListLogs(ctx)\r\n+}\r\n+\r\n+func (lpa *LogsProxyAdapter) ReadLog(ctx context.Context, filename string) (*models.ErrorLog, error) {\r\n+    return lpa.drivenAdapter.ReadLog(ctx, filename)\r\n+}\r\n+\r\n+func (lpa *LogsProxyAdapter) DeleteLog(ctx context.Context, filename string) error {\r\n+    return lpa.drivenAdapter.DeleteLog(ctx, filename)\r\n+}\r\n+\r\n+func (lpa *LogsProxyAdapter) DeleteAllLogs(ctx context.Context) error {\r\n+    return lpa.drivenAdapter.DeleteAllLogs(ctx)\r\n+}\r\n"
+                }
+            ],
+            "date": 1719196802564,
+            "name": "Commit-0",
+            "content": "package drivers\r\n\r\nimport (\r\n    \"context\"\r\n    \"logs-api/ports/drivens\"\r\n    \"logs-api/models\"\r\n)\r\n\r\ntype LogsProxyAdapter struct {\r\n    drivenAdapter drivens.LogsDrivenPort\r\n}\r\n\r\nfunc NewLogsProxyAdapter(drivenAdapter drivens.LogsDrivenPort) *LogsProxyAdapter {\r\n    return &LogsProxyAdapter{\r\n        drivenAdapter: drivenAdapter,\r\n    }\r\n}\r\n\r\nfunc (lpa *LogsProxyAdapter) SaveLog(ctx context.Context, log models.ErrorLog) error {\r\n    return lpa.drivenAdapter.SaveErrorLog(ctx, log)\r\n}\r\n\r\n"
+        }
+    ]
+}

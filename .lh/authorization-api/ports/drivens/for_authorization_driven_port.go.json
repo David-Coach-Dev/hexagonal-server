@@ -1,0 +1,26 @@
+{
+    "sourceFile": "authorization-api/ports/drivens/for_authorization_driven_port.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719213766710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719216268405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+package ports\r\n+\r\n+import (\r\n+    \"context\"\r\n+)\r\n+\r\n+type AuthorizationDrivenPort interface {\r\n+    Authorize(ctx context.Context, token string, resource string, action string) (bool, error)\r\n+}\r\n"
+                },
+                {
+                    "date": 1719217160145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package ports\r\n+package drivens\r\n \r\n import (\r\n     \"context\"\r\n )\r\n"
+                }
+            ],
+            "date": 1719213766710,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"context\"\r\n)\r\n\r\ntype AuthorizationDrivenPort interface {\r\n    Authorize(ctx context.Context, token string, resource string, action string) (bool, error)\r\n}\r\n"
+        }
+    ]
+}

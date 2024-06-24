@@ -1,0 +1,26 @@
+{
+    "sourceFile": "authorization-api/models/authorization_model.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719213724861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719213733069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-authorization_model.go\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719213740489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+package models\r\n+\r\n+type AuthorizationRequest struct {\r\n+    Token    string `json:\"token\"`\r\n+    Resource string `json:\"resource\"`\r\n+    Action   string `json:\"action\"`\r\n+}\r\n"
+                }
+            ],
+            "date": 1719213724861,
+            "name": "Commit-0",
+            "content": "authorization_model.go"
+        }
+    ]
+}

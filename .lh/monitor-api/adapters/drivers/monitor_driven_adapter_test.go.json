@@ -1,0 +1,18 @@
+{
+    "sourceFile": "monitor-api/adapters/drivers/monitor_driven_adapter_test.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1719199293537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1719199293537,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"context\"\r\n    \"testing\"\r\n    \"monitor-api/models\"\r\n    \"github.com/stretchr/testify/assert\"\r\n    \"os\"\r\n)\r\n\r\nfunc TestMonitorAdapter_SaveMonitorLog(t *testing.T) {\r\n    os.Mkdir(\"monitor\", os.ModePerm)\r\n    defer os.RemoveAll(\"monitor\")\r\n\r\n    ma := NewMonitorAdapter()\r\n    log := models.MonitorLog{\r\n        ID:        \"1\",\r\n        Endpoint:  \"/test\",\r\n        Usuario:   \"testuser\",\r\n        Respuesta: \"success\",\r\n    }\r\n\r\n    err := ma.SaveMonitorLog(context.Background(), log)\r\n    assert.NoError(t, err)\r\n\r\n    _, err = os.Stat(\"monitor/monitor-\" + log.Fecha + \"-\" + log.Hora + \".json\")\r\n    assert.False(t, os.IsNotExist(err))\r\n}\r\n"
+        }
+    ]
+}

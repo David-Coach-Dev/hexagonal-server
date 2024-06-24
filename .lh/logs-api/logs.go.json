@@ -1,0 +1,30 @@
+{
+    "sourceFile": "logs-api/logs.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719217841939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719218214077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package logs_api\r\n+package \r\n \r\n import (\r\n     \"context\"\r\n     \"logs-api/models\"\r\n"
+                },
+                {
+                    "date": 1719218220181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package con\r\n+package controol\r\n \r\n import (\r\n     \"context\"\r\n     \"logs-api/models\"\r\n"
+                },
+                {
+                    "date": 1719218468759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package control-panel\r\n+package logs\r\n \r\n import (\r\n     \"context\"\r\n     \"logs-api/models\"\r\n"
+                }
+            ],
+            "date": 1719217841939,
+            "name": "Commit-0",
+            "content": "package logs_api\r\n\r\nimport (\r\n    \"context\"\r\n    \"logs-api/models\"\r\n    \"github.com/gin-gonic/gin\"\r\n    \"logs-api/ports/drivens\"\r\n)\r\n\r\ntype LogsService struct {\r\n    drivenAdapter drivens.LogsDrivenPort\r\n}\r\n\r\nfunc NewLogsService(drivenAdapter drivens.LogsDrivenPort) *LogsService {\r\n    return &LogsService{\r\n        drivenAdapter: drivenAdapter,\r\n    }\r\n}\r\n\r\nfunc (ls *LogsService) HandleSaveLog(c *gin.Context) {\r\n    var log models.ErrorLog\r\n    if err := c.BindJSON(&log); err != nil {\r\n        c.JSON(400, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    err := ls.drivenAdapter.SaveLog(context.Background(), log)\r\n    if err != nil {\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    c.JSON(200, gin.H{\"message\": \"Log saved successfully\"})\r\n}\r\n\r\nfunc (ls *LogsService) HandleListLogs(c *gin.Context) {\r\n    logs, err := ls.drivenAdapter.ListLogs(context.Background())\r\n    if err != nil {\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    c.JSON(200, gin.H{\"logs\": logs})\r\n}\r\n\r\nfunc (ls *LogsService) HandleReadLog(c *gin.Context) {\r\n    filename := c.Param(\"filename\")\r\n    log, err := ls.drivenAdapter.ReadLog(context.Background(), filename)\r\n    if err != nil {\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    c.JSON(200, gin.H{\"log\": log})\r\n}\r\n\r\nfunc (ls *LogsService) HandleDeleteLog(c *gin.Context) {\r\n    filename := c.Param(\"filename\")\r\n    err := ls.drivenAdapter.DeleteLog(context.Background(), filename)\r\n    if err != nil {\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    c.JSON(200, gin.H{\"message\": \"Log deleted successfully\"})\r\n}\r\n\r\nfunc (ls *LogsService) HandleDeleteAllLogs(c *gin.Context) {\r\n    err := ls.drivenAdapter.DeleteAllLogs(context.Background())\r\n    if err != nil {\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n        return\r\n    }\r\n    c.JSON(200, gin.H{\"message\": \"All logs deleted successfully\"})\r\n}\r\n"
+        }
+    ]
+}

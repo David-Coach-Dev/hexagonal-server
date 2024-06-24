@@ -1,0 +1,18 @@
+{
+    "sourceFile": "control-panel/adapters/drivens/authentication_driven_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1719208871599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1719208871599,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"context\"\r\n    \"errors\"\r\n    \"authentication-api/models\"\r\n)\r\n\r\ntype AuthenticationAdapter struct{}\r\n\r\nfunc NewAuthenticationAdapter() *AuthenticationAdapter {\r\n    return &AuthenticationAdapter{}\r\n}\r\n\r\nfunc (aa *AuthenticationAdapter) Authenticate(ctx context.Context, credentials models.Credentials) (string, error) {\r\n    // Implementar lógica de autenticación aquí\r\n    if credentials.Username == \"admin\" && credentials.Password == \"password\" {\r\n        return \"token123\", nil\r\n    }\r\n    return \"\", errors.New(\"invalid credentials\")\r\n}\r\n"
+        }
+    ]
+}

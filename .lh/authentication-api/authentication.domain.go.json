@@ -1,0 +1,26 @@
+{
+    "sourceFile": "authentication-api/authentication.domain.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719212624675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719212631199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,35 @@\n-authentication.\n\\ No newline at end of file\n+authentication.package main\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"authentication-api/models\"\r\n+    \"github.com/gin-gonic/gin\"\r\n+    \"authentication-api/ports/drivens\"\r\n+    \"authentication-api/utils\"\r\n+)\r\n+\r\n+type AuthenticationService struct {\r\n+    drivenAdapter drivens.AuthenticationDrivenPort\r\n+    jwtUtil       *utils.JWTUtil\r\n+}\r\n+\r\n+func NewAuthenticationService(drivenAdapter drivens.AuthenticationDrivenPort, jwtUtil *utils.JWTUtil) *AuthenticationService {\r\n+    return &AuthenticationService{\r\n+        drivenAdapter: drivenAdapter,\r\n+        jwtUtil:       jwtUtil,\r\n+    }\r\n+}\r\n+\r\n+func (as *AuthenticationService) HandleAuthenticate(c *gin.Context) {\r\n+    var credentials models.Credentials\r\n+    if err := c.BindJSON(&credentials); err != nil {\r\n+        c.JSON(400, gin.H{\"error\": err.Error()})\r\n+        return\r\n+    }\r\n+    token, err := as.drivenAdapter.Authenticate(context.Background(), credentials)\r\n+    if err != nil {\r\n+        c.JSON(401, gin.H{\"error\": err.Error()})\r\n+        return\r\n+    }\r\n+    c.JSON(200, gin.H{\"token\": token})\r\n+}\r\n"
+                },
+                {
+                    "date": 1719213598716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-authentication.package main\r\n+package main\r\n \r\n import (\r\n     \"context\"\r\n     \"authentication-api/models\"\r\n"
+                }
+            ],
+            "date": 1719212624675,
+            "name": "Commit-0",
+            "content": "authentication."
+        }
+    ]
+}

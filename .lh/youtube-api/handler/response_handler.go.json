@@ -1,0 +1,22 @@
+{
+    "sourceFile": "youtube-api/handler/response_handler.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1719204857424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719205505638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package handler\r\n \r\n import (\r\n     \"context\"\r\n+    \"control-panel/models\"\r\n     \"control-panel/ports/drivens\"\r\n-    \"control-panel/models\"\r\n     \"github.com/gin-gonic/gin\"\r\n )\r\n \r\n type ResponseHandler struct {\r\n"
+                }
+            ],
+            "date": 1719204857424,
+            "name": "Commit-0",
+            "content": "package handler\r\n\r\nimport (\r\n    \"context\"\r\n    \"control-panel/ports/drivens\"\r\n    \"control-panel/models\"\r\n    \"github.com/gin-gonic/gin\"\r\n)\r\n\r\ntype ResponseHandler struct {\r\n    monitorAdapter drivens.MonitorPort\r\n    errorAdapter   drivens.LogsPort\r\n}\r\n\r\nfunc NewResponseHandler(monitorAdapter drivens.MonitorPort, errorAdapter drivens.LogsPort) *ResponseHandler {\r\n    return &ResponseHandler{\r\n        monitorAdapter: monitorAdapter,\r\n        errorAdapter:   errorAdapter,\r\n    }\r\n}\r\n\r\nfunc (rh *ResponseHandler) HandleResponse(c *gin.Context, data interface{}, err error, endpoint, usuario string) {\r\n    if err != nil {\r\n        log := models.ErrorLog{\r\n            ID:       \"1\",\r\n            Endpoint: endpoint,\r\n            Usuario:  usuario,\r\n            Error:    err.Error(),\r\n        }\r\n        rh.errorAdapter.SaveErrorLog(context.Background(), log)\r\n        c.JSON(500, gin.H{\"error\": err.Error()})\r\n    } else {\r\n        log := models.MonitorLog{\r\n            ID:        \"1\",\r\n            Endpoint:  endpoint,\r\n            Usuario:   usuario,\r\n            Respuesta: \"success\",\r\n        }\r\n        rh.monitorAdapter.SaveMonitorLog(context.Background(), log)\r\n        c.JSON(200, data)\r\n    }\r\n}\r\n"
+        }
+    ]
+}

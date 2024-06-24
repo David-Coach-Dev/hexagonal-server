@@ -1,0 +1,30 @@
+{
+    "sourceFile": "monitor-api/ports/drivens/for_monitor_driven_port.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719214779449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719214785140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+\r\n"
+                },
+                {
+                    "date": 1719216453879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package drivens\r\n+package ports\r\n \r\n import (\r\n     \"context\"\r\n     \"monitor-api/models\"\r\n"
+                },
+                {
+                    "date": 1719217291395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +0,0 @@\n-package ports\r\n-\r\n-import (\r\n-    \"context\"\r\n-    \"monitor-api/models\"\r\n-)\r\n-\r\n-type MonitorDrivenPort interface {\r\n-    SaveLog(ctx context.Context, log models.MonitorLog) error\r\n-    ListLogs(ctx context.Context) ([]string, error)\r\n-    ReadLog(ctx context.Context, filename string) (*models.MonitorLog, error)\r\n-    DeleteLog(ctx context.Context, filename string) error\r\n-    DeleteAllLogs(ctx context.Context) error\r\n-}\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719214779449,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

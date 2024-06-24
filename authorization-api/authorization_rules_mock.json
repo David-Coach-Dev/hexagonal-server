@@ -1,0 +1,27 @@
+[
+  {
+    "rol": "admin",
+    "resource": "resource1",
+    "action": "read"
+  },
+  {
+    "rol": "admin",
+    "resource": "resource1",
+    "action": "write"
+  },
+  {
+    "rol": "user",
+    "resource": "resource1",
+    "action": "read"
+  },
+  {
+    "rol": "user",
+    "resource": "resource2",
+    "action": "read"
+  },
+  {
+    "rol": "guest",
+    "resource": "resource1",
+    "action": "read"
+  }
+]

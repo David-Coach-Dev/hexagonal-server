@@ -1,0 +1,34 @@
+{
+    "sourceFile": "control-panel/adapters/drivens/control_panel_driven_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1719193826334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719201158226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,4 +19,5 @@\n     // Implementa la lógica de interacción con servicios internos o externos\r\n     result := fmt.Sprintf(\"Processed data: %s\", data)\r\n     return result, nil\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1719201169131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package drivens\r\n+package adapter\r\n \r\n import (\r\n     \"context\"\r\n     \"fmt\"\r\n@@ -19,5 +19,4 @@\n     // Implementa la lógica de interacción con servicios internos o externos\r\n     result := fmt.Sprintf(\"Processed data: %s\", data)\r\n     return result, nil\r\n }\r\n-\r\n"
+                },
+                {
+                    "date": 1719201214207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,24 @@\n-package adapters\r\n+package drivers\r\n \r\n import (\r\n     \"context\"\r\n-    \"fmt\"\r\n+    \"control-panel/ports/drivens\"\r\n )\r\n \r\n-type DrivenAdapter struct {\r\n-    // Agrega aquí las dependencias necesarias\r\n+type ControlPanelAdapter struct {\r\n+    drivenAdapter drivens.DrivenAdapterPort\r\n }\r\n \r\n-func NewDrivenAdapter() *DrivenAdapter {\r\n-    return &DrivenAdapter{\r\n-        // Inicializa las dependencias\r\n+func NewControlPanelAdapter(drivenAdapter drivens.DrivenAdapterPort) *ControlPanelAdapter {\r\n+    return &ControlPanelAdapter{\r\n+        drivenAdapter: drivenAdapter,\r\n     }\r\n }\r\n \r\n-func (da *DrivenAdapter) ExampleDrivenFunction(ctx context.Context, data string) (string, error) {\r\n-    // Implementa la lógica de interacción con servicios internos o externos\r\n-    result := fmt.Sprintf(\"Processed data: %s\", data)\r\n+func (cpa *ControlPanelAdapter) ExampleFunction(ctx context.Context, data string) (string, error) {\r\n+    result, err := cpa.drivenAdapter.ExampleDrivenFunction(ctx, data)\r\n+    if err != nil {\r\n+        return \"\", err\r\n+    }\r\n     return result, nil\r\n }\r\n"
+                },
+                {
+                    "date": 1719208697551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +0,0 @@\n-package adapter\r\n-\r\n-import (\r\n-    \"context\"\r\n-    \"fmt\"\r\n-)\r\n-\r\n-type DrivenAdapter struct {\r\n-    // Agrega aquí las dependencias necesarias\r\n-}\r\n-\r\n-func NewDrivenAdapter() *DrivenAdapter {\r\n-    return &DrivenAdapter{\r\n-        // Inicializa las dependencias\r\n-    }\r\n-}\r\n-\r\n-func (da *DrivenAdapter) ExampleDrivenFunction(ctx context.Context, data string) (string, error) {\r\n-    // Implementa la lógica de interacción con servicios internos o externos\r\n-    result := fmt.Sprintf(\"Processed data: %s\", data)\r\n-    return result, nil\r\n-}\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719193826334,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"context\"\r\n    \"fmt\"\r\n)\r\n\r\ntype DrivenAdapter struct {\r\n    // Agrega aquí las dependencias necesarias\r\n}\r\n\r\nfunc NewDrivenAdapter() *DrivenAdapter {\r\n    return &DrivenAdapter{\r\n        // Inicializa las dependencias\r\n    }\r\n}\r\n\r\nfunc (da *DrivenAdapter) ExampleDrivenFunction(ctx context.Context, data string) (string, error) {\r\n    // Implementa la lógica de interacción con servicios internos o externos\r\n    result := fmt.Sprintf(\"Processed data: %s\", data)\r\n    return result, nil\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "monitor-api/structure_monitor.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1719210702545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719210707582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-# Structure \n\\ No newline at end of file\n+# Structure Monitor Api\r\n+\r\n"
+                },
+                {
+                    "date": 1719210713076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,17 @@\n # Structure Monitor Api\r\n \r\n+monitor-api/\r\n+├── adapters/\r\n+│   ├── drivens/\r\n+│   │   └── monitor_driven_adapter.go\r\n+│   ├── drivers/\r\n+│   │   └── monitor_driver_adapter.go\r\n+├── models/\r\n+│   └── monitor_model.go\r\n+├── ports/\r\n+│   ├── drivens/\r\n+│   │   └── for_monitor_driven_port.go\r\n+│   ├── drivers/\r\n+│   │   └── for_monitor_driver_port.go\r\n+├── .env\r\n+└── monitor.go\r\n"
+                },
+                {
+                    "date": 1719214691113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+# Structure Monitor Api\r\n+\r\n+monitor-api/\r\n+├── adapters/\r\n+│   ├── drivens/\r\n+│   │   └── monitor_driven_adapter.go\r\n+│   ├── drivers/\r\n+│   │   └── monitor_driver_adapter.go\r\n+├── models/\r\n+│   └── monitor_model.go\r\n+├── ports/\r\n+│   ├── drivens/\r\n+│   │   └── for_monitor_driven_port.go\r\n+│   ├── drivers/\r\n+│   │   └── for_monitor_driver_port.go\r\n+├── .env\r\n+└── monitor.domain.go\r\n"
+                },
+                {
+                    "date": 1719215764349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n │   │   └── for_monitor_driven_port.go\r\n │   ├── drivers/\r\n │   │   └── for_monitor_driver_port.go\r\n ├── .env\r\n-└── monitor.domain.go\r\n+└── monitor.go\r\n"
+                }
+            ],
+            "date": 1719210702545,
+            "name": "Commit-0",
+            "content": "# Structure "
+        }
+    ]
+}

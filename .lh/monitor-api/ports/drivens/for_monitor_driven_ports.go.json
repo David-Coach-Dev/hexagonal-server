@@ -1,0 +1,22 @@
+{
+    "sourceFile": "monitor-api/ports/drivens/for_monitor_driven_ports.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1719206118662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719208349754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+package drivens\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"monitor-api/models\"\r\n+)\r\n+\r\n+type MonitorDrivenPort interface {\r\n+    SaveMonitorLog(ctx context.Context, log models.MonitorLog) error\r\n+    ListMonitorLogs(ctx context.Context) ([]string, error)\r\n+    ReadMonitorLog(ctx context.Context, filename string) (*models.MonitorLog, error)\r\n+    DeleteMonitorLog(ctx context.Context, filename string) error\r\n+    DeleteAllMonitorLogs(ctx context.Context) error\r\n+}\r\n"
+                }
+            ],
+            "date": 1719206118662,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"context\"\r\n    \"monitor-api/models\"\r\n)\r\n\r\ntype MonitorDrivenPort interface {\r\n    SaveMonitorLog(ctx context.Context, log models.MonitorLog) error\r\n}\r\n"
+        }
+    ]
+}

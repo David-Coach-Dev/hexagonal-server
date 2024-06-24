@@ -1,0 +1,30 @@
+{
+    "sourceFile": "monitor-api/adapters/drivens/monitor_driven_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719194754291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719201596230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import (\r\n     \"encoding/json\"\r\n     \"fmt\"\r\n-    \"models\"\r\n+    \"monitor-api/models\"\r\n     \"os\"\r\n     \"time\"\r\n )\r\n \r\n"
+                },
+                {
+                    "date": 1719201603865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import (\r\n     \"encoding/json\"\r\n     \"fmt\"\r\n-    \"models\"\r\n+    \"monitor-api/models\"\r\n     \"os\"\r\n     \"time\"\r\n )\r\n \r\n"
+                },
+                {
+                    "date": 1719205891324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n package drivens\r\n \r\n import (\r\n+    \"context\"\r\n     \"encoding/json\"\r\n     \"fmt\"\r\n     \"monitor-api/models\"\r\n     \"os\"\r\n@@ -13,9 +14,9 @@\n func NewMonitorAdapter() *MonitorAdapter {\r\n     return &MonitorAdapter{}\r\n }\r\n \r\n-func (ma *MonitorAdapter) SaveMonitorLog(log models.MonitorLog) error {\r\n+func (ma *MonitorAdapter) SaveMonitorLog(ctx context.Context, log models.MonitorLog) error {\r\n     log.Fecha = time.Now().Format(\"2006-01-02\")\r\n     log.Hora = time.Now().Format(\"15_04_05\")\r\n     filename := fmt.Sprintf(\"monitor/monitor-%s-%s.json\", log.Fecha, log.Hora)\r\n \r\n"
+                }
+            ],
+            "date": 1719194754291,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport (\r\n    \"encoding/json\"\r\n    \"fmt\"\r\n    \"models\"\r\n    \"os\"\r\n    \"time\"\r\n)\r\n\r\ntype MonitorAdapter struct{}\r\n\r\nfunc NewMonitorAdapter() *MonitorAdapter {\r\n    return &MonitorAdapter{}\r\n}\r\n\r\nfunc (ma *MonitorAdapter) SaveMonitorLog(log models.MonitorLog) error {\r\n    log.Fecha = time.Now().Format(\"2006-01-02\")\r\n    log.Hora = time.Now().Format(\"15_04_05\")\r\n    filename := fmt.Sprintf(\"monitor/monitor-%s-%s.json\", log.Fecha, log.Hora)\r\n\r\n    if _, err := os.Stat(\"monitor\"); os.IsNotExist(err) {\r\n        err := os.Mkdir(\"monitor\", os.ModePerm)\r\n        if err != nil {\r\n            return fmt.Errorf(\"failed to create monitor directory: %v\", err)\r\n        }\r\n    }\r\n\r\n    file, err := os.Create(filename)\r\n    if err != nil {\r\n        return err\r\n    }\r\n    defer file.Close()\r\n\r\n    encoder := json.NewEncoder(file)\r\n    err = encoder.Encode(log)\r\n    if err != nil {\r\n        return err\r\n    }\r\n\r\n    fmt.Println(\"Archivo de monitorización ha sido generado y guardado:\", filename)\r\n    return nil\r\n}\r\n"
+        }
+    ]
+}

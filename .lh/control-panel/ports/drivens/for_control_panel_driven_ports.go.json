@@ -1,0 +1,22 @@
+{
+    "sourceFile": "control-panel/ports/drivens/for_control_panel_driven_ports.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1719201330196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719210009915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+package drivens\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"control-panel/models\"\r\n+)\r\n+\r\n+type ControlPanelDrivenPort interface {\r\n+    // Funciones de autenticación\r\n+    Authenticate(ctx context.Context, credentials models.Credentials) (string, error)\r\n+    Authorize(ctx context.Context, token string, resource string, action string) (bool, error)\r\n+\r\n+    // Funciones de YouTube\r\n+    GetYouTubeSearching(ctx context.Context, searching string) ([]models.DataYT, error)\r\n+    GetYouTubeRandomVideo(ctx context.Context) (models.DataYT, error)\r\n+    GetYouTubePlaylists(ctx context.Context) ([]models.DataYT, error)\r\n+    GetYouTubePlaylistItems(ctx context.Context, playlistID string) ([]models.DataYT, error)\r\n+    GetYouTubeLive(ctx context.Context) (models.Live, error)\r\n+\r\n+    // Funciones de monitorización\r\n+    SaveMonitorLog(ctx context.Context, log models.MonitorLog) error\r\n+    ListMonitorLogs(ctx context.Context) ([]string, error)\r\n+    ReadMonitorLog(ctx context.Context, filename string) (*models.MonitorLog, error)\r\n+    DeleteMonitorLog(ctx context.Context, filename string) error\r\n+    DeleteAllMonitorLogs(ctx context.Context) error\r\n+\r\n+    // Funciones de logs\r\n+    SaveErrorLog(ctx context.Context, log models.ErrorLog) error\r\n+    ListLogs(ctx context.Context) ([]string, error)\r\n+    ReadLog(ctx context.Context, filename string) (*models.ErrorLog, error)\r\n+    DeleteLog(ctx context.Context, filename string) error\r\n+    DeleteAllLogs(ctx context.Context) error\r\n+}\r\n"
+                }
+            ],
+            "date": 1719201330196,
+            "name": "Commit-0",
+            "content": "package drivens\r\n\r\nimport \"context\"\r\n\r\ntype DrivenAdapterPort interface {\r\n    ExampleDrivenFunction(ctx context.Context, data string) (string, error)\r\n}\r\n"
+        }
+    ]
+}

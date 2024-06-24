@@ -1,0 +1,26 @@
+{
+    "sourceFile": "youtube-api/structure_youtube.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719210726684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719210734330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,17 @@\n # Structure youTube Api\r\n \r\n+youtube-api/\r\n+├── adapters/\r\n+│   ├── drivens/\r\n+│   │   └── youtube_driven_adapter.go\r\n+│   ├── drivers/\r\n+│   │   └── youtube_driver_adapter.go\r\n+├── models/\r\n+│   └── youtube_model.go\r\n+├── ports/\r\n+│   ├── drivens/\r\n+│   │   └── for_youtube_driven_port.go\r\n+│   ├── drivers/\r\n+│   │   └── for_youtube_driver_port.go\r\n+├── .env\r\n+└── youtube.go\r\n"
+                },
+                {
+                    "date": 1719212322253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n-# Structure youTube Api\r\n-\r\n youtube-api/\r\n-├── adapters/\r\n-│   ├── drivens/\r\n+├── adapters\r\n+│   ├── drivens\r\n │   │   └── youtube_driven_adapter.go\r\n-│   ├── drivers/\r\n-│   │   └── youtube_driver_adapter.go\r\n-├── models/\r\n+│   ├── drivers\r\n+│   │   └── youtube_proxy_adapter.go\r\n+├── handler\r\n+│   └── error_handler.go\r\n+├── models\r\n │   └── youtube_model.go\r\n-├── ports/\r\n-│   ├── drivens/\r\n-│   │   └── for_youtube_driven_port.go\r\n-│   ├── drivers/\r\n-│   │   └── for_youtube_driver_port.go\r\n-├── .env\r\n-└── youtube.go\r\n+├── ports\r\n+│   ├── drivens\r\n+│   │   └── for_youtube_driven_ports.go\r\n+│   ├── drivers\r\n+│   │   └── for_youtube_ports.go\r\n+├── youtube.domain.go\r\n+└── .env\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719210726684,
+            "name": "Commit-0",
+            "content": "# Structure youTube Api"
+        }
+    ]
+}

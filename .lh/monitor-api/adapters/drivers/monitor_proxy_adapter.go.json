@@ -1,0 +1,30 @@
+{
+    "sourceFile": "monitor-api/adapters/drivers/monitor_proxy_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719194898219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719194909076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+package drivers\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"monitor-api/ports/drivens\"\r\n+    \"monitor-api/models\"\r\n+)\r\n+\r\n+type MonitorProxyAdapter struct {\r\n+    drivenAdapter drivens.MonitorDrivenPort\r\n+}\r\n+\r\n+func NewMonitorProxyAdapter(drivenAdapter drivens.MonitorDrivenPort) *MonitorProxyAdapter {\r\n+    return &MonitorProxyAdapter{\r\n+        drivenAdapter: drivenAdapter,\r\n+    }\r\n+}\r\n+\r\n+func (mpa *MonitorProxyAdapter) SaveLog(ctx context.Context, log models.MonitorLog) error {\r\n+    return mpa.drivenAdapter.SaveMonitorLog(ctx, log)\r\n+}\r\n"
+                },
+                {
+                    "date": 1719201644712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +0,0 @@\n-package drivers\r\n-\r\n-import (\r\n-    \"context\"\r\n-    \"monitor-api/ports/drivens\"\r\n-    \"monitor-api/models\"\r\n-)\r\n-\r\n-type MonitorProxyAdapter struct {\r\n-    drivenAdapter drivens.MonitorDrivenPort\r\n-}\r\n-\r\n-func NewMonitorProxyAdapter(drivenAdapter drivens.MonitorDrivenPort) *MonitorProxyAdapter {\r\n-    return &MonitorProxyAdapter{\r\n-        drivenAdapter: drivenAdapter,\r\n-    }\r\n-}\r\n-\r\n-func (mpa *MonitorProxyAdapter) SaveLog(ctx context.Context, log models.MonitorLog) error {\r\n-    return mpa.drivenAdapter.SaveMonitorLog(ctx, log)\r\n-}\r\n-monitor_proxy_adapter.go\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719206036932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n package drivers\r\n \r\n import (\r\n     \"context\"\r\n+    \"monitor-api/models\"\r\n     \"monitor-api/ports/drivens\"\r\n-    \"monitor-api/models\"\r\n )\r\n \r\n type MonitorProxyAdapter struct {\r\n     drivenAdapter drivens.MonitorDrivenPort\r\n"
+                }
+            ],
+            "date": 1719194898219,
+            "name": "Commit-0",
+            "content": "monitor_proxy_adapter.go"
+        }
+    ]
+}

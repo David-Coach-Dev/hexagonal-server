@@ -1,0 +1,30 @@
+{
+    "sourceFile": "logs-api/structure_log.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719196746044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719210671202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,1 @@\n-logs-api/\r\n-├── adapters\r\n-│   ├── drivens\r\n-│   │   └── logs_driven_adapter.go\r\n-│   ├── drivers\r\n-│   │   └── logs_proxy_adapter.go\r\n-├── handler\r\n-│   └── error_handler.go\r\n-├── models\r\n-│   └── logs_model.go\r\n-├── ports\r\n-│   ├── drivens\r\n-│   │   └── for_logs_driven_ports.go\r\n-│   ├── drivers\r\n-│   │   └── for_logs_ports.go\r\n-├── logs.domain.go\r\n-└── .env\r\n+# Strucr\r\n"
+                },
+                {
+                    "date": 1719210680256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-# Structure \r\n+# Structure Logs Api\r\n"
+                },
+                {
+                    "date": 1719210692551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,17 @@\n # Structure Logs Api\r\n+\r\n+logs-api/\r\n+├── adapters/\r\n+│   ├── drivens/\r\n+│   │   └── logs_driven_adapter.go\r\n+│   ├── drivers/\r\n+│   │   └── logs_driver_adapter.go\r\n+├── models/\r\n+│   └── logs_model.go\r\n+├── ports/\r\n+│   ├── drivens/\r\n+│   │   └── for_logs_driven_port.go\r\n+│   ├── drivers/\r\n+│   │   └── for_logs_driver_port.go\r\n+├── .env\r\n+└── logs.go\r\n"
+                }
+            ],
+            "date": 1719196746044,
+            "name": "Commit-0",
+            "content": "logs-api/\r\n├── adapters\r\n│   ├── drivens\r\n│   │   └── logs_driven_adapter.go\r\n│   ├── drivers\r\n│   │   └── logs_proxy_adapter.go\r\n├── handler\r\n│   └── error_handler.go\r\n├── models\r\n│   └── logs_model.go\r\n├── ports\r\n│   ├── drivens\r\n│   │   └── for_logs_driven_ports.go\r\n│   ├── drivers\r\n│   │   └── for_logs_ports.go\r\n├── logs.domain.go\r\n└── .env\r\n"
+        }
+    ]
+}

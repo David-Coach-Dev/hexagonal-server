@@ -1,0 +1,26 @@
+{
+    "sourceFile": "authorization-api/adapters/drivers/authorization_driver_adapter.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719213697031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719216250630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package drivers\r\n+package     \r\n \r\n import (\r\n     \"context\"\r\n     \"authorization-api/models\"\r\n"
+                },
+                {
+                    "date": 1719216258098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package       adapters\r\n+package adapters\r\n \r\n import (\r\n     \"context\"\r\n     \"authorization-api/models\"\r\n"
+                }
+            ],
+            "date": 1719213697031,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

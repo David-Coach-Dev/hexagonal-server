@@ -1,0 +1,18 @@
+{
+    "sourceFile": "authorization-api/authorization.domain.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1719213817759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1719213817759,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

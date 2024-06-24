@@ -1,0 +1,38 @@
+{
+    "sourceFile": "authentication-api/ports/drivers/for_authentication_driver_port.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1719211763615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719211771031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+package drivers\r\n+\r\n+import (\r\n+    \"context\"\r\n+    \"authentication-api/models\"\r\n+)\r\n+\r\n+type AuthenticationDriverPort interface {\r\n+    Authenticate(ctx context.Context, credentials models.Credentials) (string, error)\r\n+}\r\n"
+                },
+                {
+                    "date": 1719212580717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,4 @@\n \r\n type AuthenticationDriverPort interface {\r\n     Authenticate(ctx context.Context, credentials models.Credentials) (string, error)\r\n }\r\n-for_authentication_driver_port.go\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719216163059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package drivers\r\n+package ports\r\n \r\n import (\r\n     \"context\"\r\n     \"authentication-api/models\"\r\n"
+                },
+                {
+                    "date": 1719217064804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package ports\r\n+package \r\n \r\n import (\r\n     \"context\"\r\n     \"authentication-api/models\"\r\n"
+                },
+                {
+                    "date": 1719217070224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package \r\n+package drivers\r\n \r\n import (\r\n     \"context\"\r\n     \"authentication-api/models\"\r\n"
+                }
+            ],
+            "date": 1719211763615,
+            "name": "Commit-0",
+            "content": "for_authentication_driver_port.go"
+        }
+    ]
+}

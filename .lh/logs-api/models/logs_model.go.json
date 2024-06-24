@@ -1,0 +1,26 @@
+{
+    "sourceFile": "logs-api/models/logs_model.go",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1719196891495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719207505842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,5 @@\n     Endpoint string `json:\"endpoint\"`\r\n     Usuario  string `json:\"usuario\"`\r\n     Error    string `json:\"error\"`\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1719214450789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +0,0 @@\n-package models\r\n-\r\n-type ErrorLog struct {\r\n-    ID       string `json:\"id\"`\r\n-    Fecha    string `json:\"fecha\"`\r\n-    Hora     string `json:\"hora\"`\r\n-    Endpoint string `json:\"endpoint\"`\r\n-    Usuario  string `json:\"usuario\"`\r\n-    Error    string `json:\"error\"`\r\n-}\r\n-\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1719196891495,
+            "name": "Commit-0",
+            "content": "package models\r\n\r\ntype ErrorLog struct {\r\n    ID       string `json:\"id\"`\r\n    Fecha    string `json:\"fecha\"`\r\n    Hora     string `json:\"hora\"`\r\n    Endpoint string `json:\"endpoint\"`\r\n    Usuario  string `json:\"usuario\"`\r\n    Error    string `json:\"error\"`\r\n}\r\n"
+        }
+    ]
+}
