@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1719214347792,
@@ -16,6 +16,10 @@
                 {
                     "date": 1719215747485,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n │   │   └── for_logs_driven_port.go\r\n │   ├── drivers/\r\n │   │   └── for_logs_driver_port.go\r\n ├── .env\r\n-└── logsdomain.go\r\n+└── logs\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719218964488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n # Structure Logs Api\r\n \r\n+```\r\n logs-api/\r\n ├── adapters/\r\n │   ├── drivens/\r\n │   │   └── logs_driven_adapter.go\r\n"
                 }
             ],
             "date": 1719214347792,

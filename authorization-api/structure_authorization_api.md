@@ -1,5 +1,6 @@
 # Structure Authorization Api
 
+```bash
 authorization-api/
 ├── adapters/
 │   ├── drivens/
@@ -16,3 +17,4 @@ authorization-api/
 ├── .env
 ├── authorization_rules_mock.json
 └── authorization.go
+```

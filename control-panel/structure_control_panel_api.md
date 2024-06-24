@@ -1,5 +1,6 @@
 # Structure Control Panel
 
+```bash
 control-panel/
 ├── adapters/
 │   ├── drivens/
@@ -18,3 +19,4 @@ control-panel/
 │   │   └── for_control_panel_driver_port.go
 ├── .env
 └── control_panel.go
+```

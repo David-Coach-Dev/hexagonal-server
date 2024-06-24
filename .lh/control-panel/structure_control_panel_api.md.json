@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1719213909956,
@@ -20,6 +20,14 @@
                 {
                     "date": 1719215732169,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,26 +16,5 @@\n │   │   └── for_control_panel_driven_port.go\r\n │   ├── drivers/\r\n │   │   └── for_control_panel_driver_port.go\r\n ├── .env\r\n-└── control_panel.domain.go\r\n-# Structure Control Panel\r\n-\r\n-control-panel/\r\n-├── adapters/\r\n-│   ├── drivens/\r\n-│   │   └── control_panel_driven_adapter.go\r\n-│   ├── drivers/\r\n-│   │   └── control_panel_driver_adapter.go\r\n-├── handler/\r\n-│   ├── error_handler.go\r\n-│   └── response_handler.go\r\n-├── models/\r\n-│   └── control_panel_model.go\r\n-├── ports/\r\n-│   ├── drivens/\r\n-│   │   └── for_control_panel_driven_port.go\r\n-│   ├── drivers/\r\n-│   │   └── for_control_panel_driver_port.go\r\n-├── .env\r\n └── control_panel.go\r\n-\r\n"
+                },
+                {
+                    "date": 1719218952236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n # Structure Control Panel\r\n \r\n+\r\n control-panel/\r\n ├── adapters/\r\n │   ├── drivens/\r\n │   │   └── control_panel_driven_adapter.go\r\n"
+                },
+                {
+                    "date": 1719218958076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,5 @@\n │   ├── drivers/\r\n │   │   └── for_control_panel_driver_port.go\r\n ├── .env\r\n └── control_panel.go\r\n+```\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1719213909956,

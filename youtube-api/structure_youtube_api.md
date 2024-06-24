@@ -1,5 +1,6 @@
 # Structure youTube Api
 
+```bash
 youtube-api/
 ├── adapters/
 │   ├── drivens/
@@ -15,3 +16,4 @@ youtube-api/
 │   │   └── for_youtube_driver_port.go
 ├── .env
 └── youtube.go
+```

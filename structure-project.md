@@ -1,5 +1,6 @@
-# Structure Project
+# Structure Project Hexagonal Server
 
+```bash
 hexagonal-server/
 ├── control-panel/
 │   ├── adapters/
@@ -97,3 +98,4 @@ hexagonal-server/
 ├── composer.go
 ├── main.go
 └── routing.go
+```

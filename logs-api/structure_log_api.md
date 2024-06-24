@@ -1,5 +1,6 @@
 # Structure Logs Api
 
+```bash
 logs-api/
 ├── adapters/
 │   ├── drivens/
@@ -15,3 +16,4 @@ logs-api/
 │   │   └── for_logs_driver_port.go
 ├── .env
 └── logs.go
+```

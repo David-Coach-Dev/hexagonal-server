@@ -1,5 +1,6 @@
 # Structure Authentication Api
 
+```bash
 authentication-api/
 ├── adapters/
 │   ├── drivens/
@@ -12,10 +13,11 @@ authentication-api/
 │   ├── drivens/
 │   │   └── for_authentication_driven_port.go
 │   ├── drivers/
-│   │   └── for_authentication_driver_port.go
+│
+ │   └── for_authentication_driver_port.go
 ├── utils/
 │   └── jwt_util.go
 ├── .env
 ├── users_mock.json
-└── authentication.
-go
+└── authentication.go
+```

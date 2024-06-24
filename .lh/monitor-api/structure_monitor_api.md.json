@@ -1,0 +1,22 @@
+{
+    "sourceFile": "monitor-api/structure_monitor_api.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1719218977809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719218984266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n # Structure Monitor Api\r\n \r\n+```bash\r\n monitor-api/\r\n ├── adapters/\r\n │   ├── drivens/\r\n │   │   └── monitor_driven_adapter.go\r\n"
+                }
+            ],
+            "date": 1719218977809,
+            "name": "Commit-0",
+            "content": "# Structure Monitor Api\r\n\r\nmonitor-api/\r\n├── adapters/\r\n│   ├── drivens/\r\n│   │   └── monitor_driven_adapter.go\r\n│   ├── drivers/\r\n│   │   └── monitor_driver_adapter.go\r\n├── models/\r\n│   └── monitor_model.go\r\n├── ports/\r\n│   ├── drivens/\r\n│   │   └── for_monitor_driven_port.go\r\n│   ├── drivers/\r\n│   │   └── for_monitor_driver_port.go\r\n├── .env\r\n└── monitor.go\r\n```"
+        }
+    ]
+}
